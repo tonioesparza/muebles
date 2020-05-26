@@ -1,3 +1,4 @@
+
 __author__ = "Bruger"
 __version__ = "2020.05.25"
 
@@ -43,14 +44,23 @@ for line in listOfLines:
     #print ycomp, ycomp[0]-layerThickness/2, ycomp[1]+layerThickness/2
     #print zcomp, zcomp[0]-layerThickness/2, zcomp[1]+layerThickness/2
     
-    xcomp[0]= xcomp[0]-layerThickness/2
-    xcomp[1]=xcomp[1]+layerThickness/2
+    xdif = xcomp[1]- xcomp[0]
     
-    ycomp[0]= ycomp[0]-layerThickness/2
-    ycomp[1]= ycomp[1]+layerThickness/2 
+    if  xdif < layerThickness:
+        xcomp[0]= xcomp[0]-layerThickness/2
+        xcomp[1]=xcomp[1]+layerThickness/2
     
-    zcomp[0]= zcomp[0]-layerThickness/2
-    zcomp[1]= zcomp[1]+layerThickness/2
+    ydif = ycomp[1]- ycomp[0]
+    
+    if ydif < layerThickness:
+        ycomp[0]= ycomp[0]-layerThickness/2
+        ycomp[1]= ycomp[1]+layerThickness/2 
+    
+    zdif = zcomp[1]- zcomp[0]
+    
+    if zdif < layerThickness:
+        zcomp[0]= zcomp[0]-layerThickness/2
+        zcomp[1]= zcomp[1]+layerThickness/2
     
     #print xcomp
     #print ycomp
@@ -132,4 +142,5 @@ for line in listOfLines:
     
     
     #print " line ", i
+
 
